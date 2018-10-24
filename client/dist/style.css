@@ -1,0 +1,49 @@
+.navbar { grid-area: navbar; }
+.images {grid-area: image;}
+.desc { grid-area: desc; }
+.booking {
+    grid-area: booking;
+    position: sticky;
+}
+.availability {
+    grid-area: avail;
+}
+.reviews {
+    grid-area: reviews;
+}
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'navbar navbar navbar navbar navbar navbar'
+    'image image image image image image';
+  grid-gap: 5px;
+  padding: 1px;
+}
+.grid-container > div {
+  background-color: aliceblue;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+.content-container {
+    margin-top: 10px;
+    display: grid;
+    grid-template-areas:
+      '. desc desc desc desc desc . booking .'
+      '. desc desc desc desc desc . booking .'
+      '. desc desc desc desc desc . booking .'
+      '. desc desc desc desc desc . . .'
+      '. desc desc desc desc desc . . .'
+      '. desc desc desc desc desc . . .'
+      '. avail avail avail avail avail . . .'
+      '. avail avail avail avail avail . . .'
+      '. reviews reviews reviews reviews reviews . . .';
+    grid-gap: 5px;
+    padding: 1px;
+}
+.content-container > div {
+    background-color: aliceblue;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}

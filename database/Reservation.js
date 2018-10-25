@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const db = require('./index.js');
 
 const reservationSchema = new mongoose.Schema({
     listStartDate: { type: Date, default: Date.now },

@@ -5,7 +5,10 @@ const reservationSchema = new mongoose.Schema({
     listEndDate: Date,
     reservations: [ Array ],
     listingId: String,
-    userId: String
+    userId: String,
+    minStay: Number,
+    reviewCount: Number,
+    avgReview: Number
 }, {
     timestamps: true
 });

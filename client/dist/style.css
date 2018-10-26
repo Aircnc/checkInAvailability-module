@@ -1,8 +1,6 @@
 body {
     margin: 0;
 }
-
-/* .images {grid-area: image;} */
 .desc { grid-area: desc; }
 .booking {
     grid-area: booking;
@@ -21,12 +19,14 @@ body {
   grid-template-columns: 80px auto 40px;
   height: 80px;
 }
-/* .grid-container > div {
-  background-color: aliceblue;
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
-} */
+.images-container {
+    margin-top: 1px;
+    display: grid;
+    grid-template-areas:
+      'bigpic bigpic smallpic1 smallpic2'
+      'bigpic bigpic smallpic3 smallpic4';
+    height: 440px;
+}
 .content-container {
     margin-top: 10px;
     display: grid;
@@ -52,6 +52,9 @@ body {
 #nav {
     height: 80px;
     background-color: white;
+}
+#images {
+    height: 300px;
 }
 #logo {
     width: 80px;
@@ -163,4 +166,44 @@ body {
     height: 100%;
     border-bottom: solid white;
     border-width: 2px;
+}
+.bigpic {
+    height: 440px;
+    grid-area: bigpic;
+    background-image: url("https://a0.muscache.com/im/pictures/25735497/948807b4_original.jpg?aki_policy=xx_large");
+    background-size: cover;
+    border: solid rgb(95, 95, 95);
+    border-width: 1px;
+}
+.smallpic1 {
+    height: 220px;
+    grid-area: smallpic1;
+    background-image: url("https://a0.muscache.com/im/pictures/25735316/c4022ac4_original.jpg?aki_policy=large");
+    background-size: cover;
+    border: solid rgb(95, 95, 95);
+    border-width: 1px;
+}
+.smallpic2 {
+    height: 220px;
+    grid-area: smallpic2;
+    background-image: url("https://a0.muscache.com/im/pictures/25734939/0d9075a0_original.jpg?aki_policy=large");
+    background-size: cover;
+    border: solid rgb(95, 95, 95);
+    border-width: 1px;
+}
+.smallpic3 {
+    height: 220px;
+    grid-area: smallpic3;
+    background-image: url("https://a0.muscache.com/im/pictures/25735239/f15bbc2a_original.jpg?aki_policy=large");
+    background-size: cover;
+    border: solid rgb(95, 95, 95);
+    border-width: 1px;
+}
+.smallpic4 {
+    height: 220px;
+    grid-area: smallpic4;
+    background-image: url("https://a0.muscache.com/im/pictures/25735062/c43ce51d_original.jpg?aki_policy=large");
+    background-size: cover;
+    border: solid rgb(95, 95, 95);
+    border-width: 1px;
 }

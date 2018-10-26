@@ -9,11 +9,11 @@ class Nav extends React.Component {
 
     render() {
         return (
-            <div class="nav-container">
+            <div className="nav-container">
                 <div id="logo">
                     <img src="http://logodatabases.com/wp-content/uploads/2017/06/airbnb_logo_small.png"></img>
                 </div>
-                <Input id='search-bar' icon='search' iconPosition='left' placeholder='Search...' />
+                <Input id='search-bar' icon='search large' iconPosition='left' placeholder='Search' />
                 <div id="list1" className="rectangle">Start hosting</div>
                 <div id="list2" className="rectangle">Saved</div>
                 <div id="list3" className="rectangle">Trips</div>

@@ -17,7 +17,8 @@ body {
 .nav-container {
   display: grid;
   grid-template-areas:
-    'logo search search search search search list1 list2 list3 list4 list5 list6';
+    'logo search . . list1 list2 list3 list4 list5 list6';
+  grid-template-columns: 80px auto 40px;
   height: 80px;
 }
 /* .grid-container > div {
@@ -56,7 +57,6 @@ body {
     width: 80px;
     height: 80px;
     padding: 20px;
-    margin-left: 20px;
     grid-area: logo;
 }
 #logo > img {
@@ -68,9 +68,15 @@ body {
     top: 20%;
     grid-area: search;
     height: 48px;
-    max-width: 100%;
     width: 460px;
     box-shadow: 0.5px 1px 5px 1px #ccc;
+    font-size: 150%;
+    font-weight: bold;
+    transition: all 0.5s ease-in-out;
+}
+#search-bar:focus {
+    width: 650px;
+    transition: all 0.5s ease-in-out;
 }
 #search-bar:hover {
     box-shadow: 0.8px 1.5px 8px 2px rgb(187, 187, 187);
@@ -142,6 +148,7 @@ body {
     background-size: cover;
     border-radius: 50%;
     opacity: 0.5;
+    transition: all 0.5s ease-in-out;
 }
 .circle:hover {
     opacity: 1;
@@ -151,4 +158,6 @@ body {
     text-align: center;
     width: 70%;
     height: 100%;
+    border-bottom: solid white;
+    border-width: 2px;
 }

@@ -1,17 +1,18 @@
 body {
     margin: 0;
+    overflow: scroll;
 }
-.desc { grid-area: desc; }
+/* .desc { grid-area: desc; }
 .booking {
     grid-area: booking;
     position: sticky;
 }
 .availability {
     grid-area: avail;
-}
-.reviews {
+} */
+/* .reviews {
     grid-area: reviews;
-}
+} */
 .nav-container {
   display: grid;
   grid-template-areas:
@@ -27,8 +28,16 @@ body {
       'bigpic bigpic smallpic3 smallpic4';
     height: 440px;
 }
-.content-container {
-    margin-top: 10px;
+.main-body-container {
+    padding-top: 25px;
+    display: grid;
+    grid-template-areas:    
+      '. desc desc desc book book .';
+    height: auto;
+    grid-gap: 10px;
+}
+/* .content-container { */
+    /* margin-top: 10px;
     display: grid;
     grid-template-areas:
       '. desc desc desc desc desc . booking .'
@@ -48,13 +57,13 @@ body {
     text-align: center;
     padding: 20px 0;
     font-size: 30px;
-}
+} */
 #nav {
     height: 80px;
     background-color: white;
 }
 #images {
-    height: 300px;
+    height: 440px;
 }
 #logo {
     width: 80px;
@@ -204,6 +213,16 @@ body {
     grid-area: smallpic4;
     background-image: url("https://a0.muscache.com/im/pictures/25735062/c43ce51d_original.jpg?aki_policy=large");
     background-size: cover;
+    border: solid rgb(95, 95, 95);
+    border-width: 1px;
+}
+.desc-container {
+    grid-area: desc;
+    border: solid rgb(95, 95, 95);
+    border-width: 1px;
+}
+.booking-container {
+    grid-area: book;
     border: solid rgb(95, 95, 95);
     border-width: 1px;
 }

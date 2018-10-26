@@ -36,6 +36,7 @@
     "faker": "^4.1.0",
     "mongoose": "^5.3.6",
     "react": "^16.6.0",
-    "react-dom": "^16.6.0"
+    "react-dom": "^16.6.0",
+    "semantic-ui-react": "^0.83.0"
   }
 }

@@ -1,15 +1,10 @@
 import React from 'react';
 
-class Booking extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+const Booking = () => (
+  <div className="booking-container">
+    <div className="booking-card" />
+  </div>
+);
 
-    render() {
-        return (
-            <div className="booking-container">hello world</div>
-        )
-    }
-};
 
 export default Booking;

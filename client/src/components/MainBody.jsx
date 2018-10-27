@@ -1,20 +1,16 @@
 import React from 'react';
-import Desc from './Desc.jsx';
-import Booking from './Booking.jsx';
+import Desc from './Desc';
+import Booking from './Booking';
+import Aval from './Aval';
+import Reviews from './Reviews';
 
-class MainBody extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-
-    render() {
-        return (
-            <div className="main-body-container">
-                <Desc />
-                <Booking />
-            </div>
-        )
-    }
-}
+const MainBody = () => (
+  <div className="main-body-container">
+    <Desc />
+    <Booking />
+    <Aval />
+    <Reviews />
+  </div>
+);
 
 export default MainBody;

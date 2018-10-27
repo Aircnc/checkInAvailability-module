@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Nav from './components/Nav.jsx';
-import Images from './components/Images.jsx';
-import MainBody from './components/MainBody.jsx';
+import Nav from './components/Nav';
+import Images from './components/Images';
+import MainBody from './components/MainBody';
 
 // class App extends React.Component {
 //     constructor(props) {

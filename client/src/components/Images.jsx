@@ -1,21 +1,13 @@
 import React from 'react';
 
-class Images extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return (
-            <div className="images-container">
-                <div  className="bigpic"></div>
-                <div  className="smallpic1"></div>
-                <div  className="smallpic2"></div>
-                <div  className="smallpic3"></div>
-                <div  className="smallpic4"></div>
-            </div>
-        )
-    }
-};
+const Images = () => (
+  <div className="images-container">
+    <div className="bigpic" />
+    <div className="smallpic1" />
+    <div className="smallpic2" />
+    <div className="smallpic3" />
+    <div className="smallpic4" />
+  </div>
+);
 
 export default Images;

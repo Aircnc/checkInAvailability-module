@@ -29,12 +29,16 @@ body {
     height: 440px;
 }
 .main-body-container {
+    width: 80%;
     padding-top: 25px;
     display: grid;
     grid-template-areas:    
-      '. desc desc desc book book .';
+      '. desc desc desc book book .'
+      '. aval aval aval book book .'
+      '. reviews reviews reviews book book .';
     height: auto;
     grid-gap: 10px;
+    margin: 0 auto;
 }
 /* .content-container { */
     /* margin-top: 10px;
@@ -84,8 +88,7 @@ body {
     grid-area: search;
     height: 48px;
     width: 460px;
-    box-shadow: 0.5px 1px 5px 1px #ccc;
-    font-size: 150%;
+    box-shadow: 0.25px 0.5px 3px 1px #ccc;
     font-weight: bold;
     transition: all 0.5s ease-in-out;
 }
@@ -94,7 +97,7 @@ body {
     transition: all 0.5s ease-in-out;
 }
 #search-bar:hover {
-    box-shadow: 0.8px 1.5px 8px 2px rgb(187, 187, 187);
+    box-shadow: 0.5px 0.85px 5px 1px rgb(187, 187, 187);
 }
 #list1 {
     display: flex;
@@ -183,6 +186,7 @@ body {
     background-size: cover;
     border: solid rgb(95, 95, 95);
     border-width: 1px;
+    overflow: hidden;
 }
 .smallpic1 {
     height: 220px;
@@ -191,6 +195,7 @@ body {
     background-size: cover;
     border: solid rgb(95, 95, 95);
     border-width: 1px;
+    overflow: hidden;
 }
 .smallpic2 {
     height: 220px;
@@ -199,6 +204,7 @@ body {
     background-size: cover;
     border: solid rgb(95, 95, 95);
     border-width: 1px;
+    overflow: hidden;
 }
 .smallpic3 {
     height: 220px;
@@ -207,6 +213,7 @@ body {
     background-size: cover;
     border: solid rgb(95, 95, 95);
     border-width: 1px;
+    overflow: hidden;
 }
 .smallpic4 {
     height: 220px;
@@ -220,9 +227,31 @@ body {
     grid-area: desc;
     border: solid rgb(95, 95, 95);
     border-width: 1px;
+    padding: 10px;
 }
 .booking-container {
     grid-area: book;
     border: solid rgb(95, 95, 95);
+    border-width: 1px;
+    padding: 10px;
+}
+.aval-container {
+    grid-area: aval;
+    border: solid rgb(95, 95, 95);
+    border-width: 1px;
+    padding: 10px;
+}
+.reviews-container {
+    grid-area: reviews;
+    border: solid rgb(95, 95, 95);
+    border-width: 1px;
+    padding: 10px;
+}
+.booking-card {
+    position: sticky;
+    top: -1px;
+    width: 377px;
+    height: 535px;
+    border: solid #ccc;
     border-width: 1px;
 }

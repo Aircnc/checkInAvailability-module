@@ -6,11 +6,30 @@ const Booking = () => (
     <div className="booking-card">
       <div className="price-tag">
         <div className="price">
-          <span className="room-price">$73 </span>
-          <span> per night</span>
+          <span id="room-price">
+            <i className="fa fa-usd" />
+            73
+          </span>
+          <span>per night</span>
         </div>
         <div className="avg-review">
-          213 stars
+          <div className="star-ratings-css">
+            <span className="star-ratings-css-top">
+              <span>&#9733;</span>
+              <span>&#9733;</span>
+              <span>&#9733;</span>
+              <span>&#9733;</span>
+              <span>&#9733;</span>
+            </span>
+            <span className="star-ratings-css-bottom">
+              <span>&#9733;</span>
+              <span>&#9733;</span>
+              <span>&#9733;</span>
+              <span>&#9733;</span>
+              <span>&#9733;</span>
+            </span>
+            <span id="review-count">213</span>
+          </div>
         </div>
       </div>
       <hr className="line-breaker" />

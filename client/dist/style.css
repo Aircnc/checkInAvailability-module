@@ -267,12 +267,16 @@ body {
     padding: 5%;
     font-size: smaller;
 }
-.room-price {
+#room-price {
     font-size: 20px;
     font-weight: bold;
+    margin-right: 5px;
+}
+.avg-review {
+    padding-top: 2px;
 }
 .line-breaker {
-    border-top: 0.5px solid #d8d8d8;
+    border-top: 0.5px solid #ddd0d5;
     width: 90%;
     margin: auto;
 }
@@ -293,4 +297,32 @@ body {
 }
 .booking-footer {
     padding: 5%;
+}
+.star-ratings-css {
+    unicode-bidi: bidi-override;
+    color: #ddd0d5;
+    position: relative;
+    padding: 0;
+    width: 90px;
+}
+.star-ratings-css-top {
+    width: 58%;
+    color: rgb(25, 133, 140);
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+.star-ratings-css-bottom {
+    padding: 0;
+    display: inline-block;
+    z-index: 0;
+}
+#review-count {
+    display: inline-block;
+    margin-left: 5px;
+    color: black;
 }

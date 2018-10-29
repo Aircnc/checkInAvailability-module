@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack -d --watch",
     "start": "nodemon server/index.js --watch",
-    "seed": "node database/seed.js"
+    "seed": "node database/seed.js",
+    "lint": "eslint --ignore-path .gitignore ."
   },
   "repository": {
     "type": "git",
@@ -31,11 +32,19 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "babel-eslint": "^10.0.1",
     "body-parser": "^1.18.3",
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-hackreactor": "github:hackreactor-labs/eslint-config-hackreactor",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
     "express": "^4.16.4",
     "faker": "^4.1.0",
     "mongoose": "^5.3.6",
     "react": "^16.6.0",
-    "react-dom": "^16.6.0"
+    "react-dom": "^16.6.0",
+    "semantic-ui-react": "^0.83.0"
   }
 }

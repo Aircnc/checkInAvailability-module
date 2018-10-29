@@ -248,10 +248,49 @@ body {
     padding: 10px;
 }
 .booking-card {
+    margin: auto;
     position: sticky;
-    top: -1px;
+    top: 30px;
     width: 377px;
-    height: 535px;
+    height: auto;
     border: solid #ccc;
     border-width: 1px;
+}
+.aval-card {
+    margin: auto;
+    width: 660px;
+    height: 460px;
+    border: solid #ccc;
+    border-width: 1px;
+}
+.price-tag {
+    padding: 5%;
+    font-size: smaller;
+}
+.room-price {
+    font-size: 20px;
+    font-weight: bold;
+}
+.line-breaker {
+    border-top: 0.5px solid #d8d8d8;
+    width: 90%;
+    margin: auto;
+}
+.booking-form {
+    padding: 5%;
+}
+#booking-btn {
+    width: 100%;
+    background-color: rgb(252, 92, 102);
+    color: white;
+    height: 52px;
+    font-size: larger;
+}
+#booking-short-desc {
+    text-align: center;
+    font-size: smaller;
+    padding: 0 5% 5% 0;
+}
+.booking-footer {
+    padding: 5%;
 }

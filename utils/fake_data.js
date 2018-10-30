@@ -12,6 +12,7 @@ const fake = (num) => {
     sample.minStay = Math.floor(Math.random() * 5);
     sample.reviewCount = Math.floor(Math.random() * 100 + 100);
     sample.avgReview = Math.floor(Math.random() * 5) + 1;
+    sample.roomPrice = Math.ceil(Math.random() * 100 + 100);
     const randomNumOfReservations = Math.ceil(Math.random() * 10);
     const reservations = [];
     for (let j = 1; j <= randomNumOfReservations; j += 1) {

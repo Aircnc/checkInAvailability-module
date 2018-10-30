@@ -18,7 +18,8 @@ class Booking extends React.Component {
   }
 
   get() {
-    axios.get('/listings/94913e83-4ddc-456c-b0de-4aab177e383c/reservations')
+    const listingId = Math.ceil(Math.random() * 100);
+    axios.get(`/listings/${listingId}/reservations`)
       .then((response) => {
         this.setState({
           avgReview: response.data[0].avgReview / 3 * 40,

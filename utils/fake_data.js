@@ -7,7 +7,7 @@ const fake = (num) => {
     const sample = {};
     sample.listStartDate = faker.date.between('2017/01/01', '2017/02/01');
     sample.listEndDate = faker.date.between('2019/01/01', '2019/02/01');
-    sample.listingId = faker.random.uuid();
+    sample.listingId = i + 1;
     sample.userId = faker.random.uuid();
     sample.minStay = Math.floor(Math.random() * 5);
     sample.reviewCount = Math.floor(Math.random() * 100 + 100);

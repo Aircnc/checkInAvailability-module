@@ -8,7 +8,7 @@ class Booking extends React.Component {
     this.state = {
       roomPrice: null,
       reviewCount: null,
-      avgReview: null
+      avgReview: null,
     };
     this.get = this.get.bind(this);
   }
@@ -18,11 +18,12 @@ class Booking extends React.Component {
   }
 
   get() {
-    axios.get('/listings/7e57577f-4849-4258-94a8-6f5817c61c54/reservations')
+    axios.get('/listings/94913e83-4ddc-456c-b0de-4aab177e383c/reservations')
       .then((response) => {
         this.setState({
           avgReview: response.data[0].avgReview / 3 * 40,
           reviewCount: response.data[0].reviewCount,
+          roomPrice: response.data[0].roomPrice,
         });
       })
       .catch((error) => {
@@ -31,6 +32,7 @@ class Booking extends React.Component {
   }
 
   render() {
+    const { roomPrice, avgReview, reviewCount } = this.state;
     return (
       <div className="booking-container">
         <div className="booking-card">
@@ -38,13 +40,13 @@ class Booking extends React.Component {
             <div className="price">
               <span id="room-price">
                 <i className="fa fa-usd" />
-                73
+                {roomPrice}
               </span>
               <span>per night</span>
             </div>
             <div className="avg-review">
               <div className="star-ratings-css">
-                <span className="star-ratings-css-top" style={{ width: `${this.state.avgReview}%` }}>
+                <span className="star-ratings-css-top" style={{ width: `${avgReview}%` }}>
                   <span>&#9733;</span>
                   <span>&#9733;</span>
                   <span>&#9733;</span>
@@ -58,7 +60,7 @@ class Booking extends React.Component {
                   <span>&#9733;</span>
                   <span>&#9733;</span>
                 </span>
-                <span id="review-count">{ this.state.reviewCount }</span>
+                <span id="review-count">{reviewCount}</span>
               </div>
             </div>
           </div>

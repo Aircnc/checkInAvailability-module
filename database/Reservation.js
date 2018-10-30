@@ -9,6 +9,7 @@ const reservationSchema = new mongoose.Schema({
   minStay: Number,
   reviewCount: Number,
   avgReview: Number,
+  roomPrice: Number,
 }, {
   timestamps: true,
 });

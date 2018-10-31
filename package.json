@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "bluebird": "^3.5.2",
     "body-parser": "^1.18.3",

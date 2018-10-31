@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('./index');
 
 const reservationSchema = new mongoose.Schema({
   listStartDate: { type: Date, default: Date.now },
@@ -9,6 +9,7 @@ const reservationSchema = new mongoose.Schema({
   minStay: Number,
   reviewCount: Number,
   avgReview: Number,
+  roomPrice: Number,
 }, {
   timestamps: true,
 });

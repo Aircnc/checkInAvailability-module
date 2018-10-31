@@ -2,7 +2,7 @@ const reservations = require('./data/reservations');
 
 const axios = jest.genMockFromModule('axios');
 
-axios.get = (url) =>  {
+axios.get = (url) => {
   return new Promise((resolve, reject) => {
     if (url === '/listings/7/reservations') {
       resolve(reservations);

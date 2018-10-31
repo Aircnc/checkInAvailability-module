@@ -14,18 +14,19 @@ class Booking extends React.Component {
   }
 
   componentDidMount() {
-    this.get();
+    const listingId = Math.ceil(Math.random() * 100);
+    this.get(listingId);
   }
 
-  get() {
-    const listingId = Math.ceil(Math.random() * 100);
-    axios.get(`/listings/${listingId}/reservations`)
+  get(listingId, cb) {
+    return axios.get(`/listings/${listingId}/reservations`)
       .then((response) => {
         this.setState({
           avgReview: response.data[0].avgReview / 3 * 40,
           reviewCount: response.data[0].reviewCount,
           roomPrice: response.data[0].roomPrice,
         });
+        cb();
       })
       .catch((error) => {
         throw error;

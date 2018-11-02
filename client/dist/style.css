@@ -2,17 +2,9 @@ body {
     margin: 0;
     overflow: scroll;
 }
-/* .desc { grid-area: desc; }
-.booking {
-    grid-area: booking;
-    position: sticky;
+button:hover {
+    cursor: pointer;
 }
-.availability {
-    grid-area: avail;
-} */
-/* .reviews {
-    grid-area: reviews;
-} */
 .nav-container {
   display: grid;
   grid-template-areas:
@@ -40,28 +32,6 @@ body {
     grid-gap: 10px;
     margin: 0 auto;
 }
-/* .content-container { */
-    /* margin-top: 10px;
-    display: grid;
-    grid-template-areas:
-      '. desc desc desc desc desc . booking .'
-      '. desc desc desc desc desc . booking .'
-      '. desc desc desc desc desc . booking .'
-      '. desc desc desc desc desc . . .'
-      '. desc desc desc desc desc . . .'
-      '. desc desc desc desc desc . . .'
-      '. avail avail avail avail avail . . .'
-      '. avail avail avail avail avail . . .'
-      '. reviews reviews reviews reviews reviews . . .';
-    grid-gap: 5px;
-    padding: 1px;
-}
-.content-container > div {
-    background-color: aliceblue;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
-} */
 #nav {
     height: 80px;
     background-color: white;
@@ -248,11 +218,12 @@ body {
     padding: 10px;
 }
 .booking-card {
+    font-family: 'Lato', sans-serif;
     margin: auto;
     position: sticky;
     top: 30px;
     width: 377px;
-    height: auto;
+    height: 450px;
     border: solid #ccc;
     border-width: 1px;
 }
@@ -276,19 +247,20 @@ body {
     padding-top: 2px;
 }
 .line-breaker {
-    border-top: 0.5px solid #ddd0d5;
+    border-top: 0.5px solid #ddd;
     width: 90%;
     margin: auto;
 }
 .booking-form {
     padding: 5%;
+    height: 252.5px;
 }
 #booking-btn {
     width: 100%;
     background-color: rgb(252, 92, 102);
     color: white;
     height: 52px;
-    font-size: larger;
+    font-size: 16.5px;
 }
 #booking-short-desc {
     text-align: center;
@@ -325,4 +297,154 @@ body {
     display: inline-block;
     margin-left: 5px;
     color: black;
+}
+.booking-form {
+    font-size: smaller;
+}
+#booking-dates, #booking-guests {
+    display: block;
+    position: relative;
+    margin-bottom: 10px;
+}
+#booking-guests > button {
+    width: 100%;
+    border-color: #ddd;
+    text-align: left;
+    display: block;
+    font-size: 16px;
+    font-weight: lighter;
+    width: 100%;
+    height: 42px;
+}
+.input-dates {
+    height: 75px;
+}
+.input-guests {
+    height: 85px;
+}
+#checkin {
+    display: block;
+    font-size: 16px;
+    font-weight: lighter;
+    width: 100%;
+    height: 42px;
+    padding: 2%;
+}
+#guest-count {
+    width: auto;
+}
+#downarrow {
+    position: relative;
+    z-index: 1;
+    left: 90%;
+    bottom: 30px;
+}
+.green {
+    background-color: #9DEDE4;
+    color: #147B81;
+    border-radius: 3px;
+    padding: 2%;
+    margin: 2%;
+}
+#drop-down-guest {
+    display: none;
+    border: 1px solid #ddd;
+    border-top: 2px solid #147B81;
+    background-color: white;
+    height: 300px;
+    position: relative;
+    top: -31px;
+    box-shadow: 0.25px 0.25px 0.5px 0.5px #aaa;
+}
+#drop-down-content {
+    position: absolute;
+    min-width: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    font-size: larger;
+}
+.adult-guest {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+.child-guest {
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+.guest-desc {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+#guest-dropdown-close-btn {
+    position: relative;
+}
+.guest-row-content {
+    display: grid;
+    grid-template-areas:
+    'guestTxt guestBtn';
+    grid-template-columns: 174px 120px;
+    height: 34px;
+    align-items: center;
+}
+.guest-type {
+    font-size: larger;
+    padding-bottom: 5px;
+}
+.guest-txt {
+    font-weight: bold;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.guest-count-btn {
+    position: relative;
+    grid-area: guestBtn;
+    display: grid;
+    grid-template-areas: 
+    'minus num plus';
+    grid-auto-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+.round-btn {
+    border-radius: 50%;
+    border: 0.5px solid #147B81;
+    height: 24px;
+    width: 24px;
+    position: relative;
+}
+.minus-sign, .plus-sign {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+}
+.btn-span-minus {
+    grid-area: minus;
+}
+.guest-count-num {
+    grid-area: num;
+}
+.btn-span-plus {
+    grid-area: plus;
+}
+button:disabled {
+    opacity: 0.5;
+}
+.guest-dropdown-close {
+    text-align: right;
+}
+.guest-dropdown-close-btn {
+    color: #147B81;
+    border: none;
+    font-size: larger;
+}
+.guest-dropdown-close-btn:hover {
+    text-decoration: underline;
 }

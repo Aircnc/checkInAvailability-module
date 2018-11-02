@@ -1,9 +1,10 @@
 /* eslint react/jsx-filename-extension: [0] */
-
 import Booking from '../client/src/components/Booking';
 
+jest.mock('axios');
 const React = require('react');
 const Enzyme = require('enzyme');
+const axios = require('axios');
 
 describe('Booking Component', () => {
   const wrapper = Enzyme.shallow(<Booking />);
@@ -25,5 +26,14 @@ describe('Booking Component', () => {
 
   it('should have a child with className booking-card', () => {
     expect(wrapper.childAt(0).hasClass('booking-card'));
+  });
+
+  it('should send get request and render data based on response', (done) => {
+    expect.assertions(1);
+    axios.get('/listings/1/reservations')
+      .then((data) => {
+        expect(data[0].reservations).toHaveLength(8);
+        done();
+      });
   });
 });

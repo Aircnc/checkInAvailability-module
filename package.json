@@ -54,6 +54,7 @@
     "faker": "^4.1.0",
     "jest-enzyme": "^7.0.0",
     "mongoose": "^5.3.6",
+    "prop-types": "^15.6.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "semantic-ui-react": "^0.83.0"

@@ -28,8 +28,12 @@ describe('Booking Component', () => {
     expect(wrapper.childAt(0).hasClass('booking-card'));
   });
 
-  it('should send get request and render data based on response', () => {
-    const data = axios.get('/listings/7/reservations');
-    expect(typeof data).toBe('object');
+  it('should send get request and render data based on response', (done) => {
+    expect.assertions(1);
+    axios.get('/listings/1/reservations')
+      .then((data) => {
+        expect(data[0].reservations).toHaveLength(8);
+        done();
+      });
   });
 });

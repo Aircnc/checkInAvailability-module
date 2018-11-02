@@ -22,7 +22,9 @@ class GuestBtnGroup extends React.Component {
 
   handlePlus() {
     const { num } = this.state;
-    const { type, getTotalGuest, setTotalGuest } = this.props;
+    const {
+      type, getTotalGuest, setTotalGuest, setTotalInfant,
+    } = this.props;
     const totalGuest = getTotalGuest();
     document.getElementById(type).disabled = false;
     if (type !== 'infant-minus') {
@@ -36,18 +38,21 @@ class GuestBtnGroup extends React.Component {
       this.setState({
         num: num + 1,
       });
+      setTotalInfant('plus');
     }
   }
 
   handleMinus() {
     const { num } = this.state;
-    const { type, setTotalGuest } = this.props;
+    const { type, setTotalGuest, setTotalInfant } = this.props;
     if (num > 1 && type) {
       this.setState({
         num: num - 1,
       });
       if (type !== 'infant-minus') {
         setTotalGuest('minus');
+      } else {
+        setTotalInfant('minus');
       }
     } else if (num === 1 && type === 'adult-minus') {
       document.getElementById(type).disabled = true;
@@ -57,6 +62,8 @@ class GuestBtnGroup extends React.Component {
       });
       if (type !== 'infant-minus') {
         setTotalGuest('minus');
+      } else {
+        setTotalInfant('minus');
       }
     } else {
       document.getElementById(type).disabled = true;
@@ -94,6 +101,7 @@ GuestBtnGroup.propTypes = {
   type: PropTypes.string,
   getTotalGuest: PropTypes.func,
   setTotalGuest: PropTypes.func,
+  setTotalInfant: PropTypes.func,
 };
 
 GuestBtnGroup.defaultProps = {
@@ -103,6 +111,9 @@ GuestBtnGroup.defaultProps = {
 
   },
   setTotalGuest: () => {
+
+  },
+  setTotalInfant: () => {
 
   },
 };

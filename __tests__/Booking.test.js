@@ -43,14 +43,26 @@ describe('Booking Component', () => {
 
   it('should have a working method setTotalGuest', () => {
     const currentGuestCount = wrapper.state('totalGuest');
-    wrapper.instance().setTotalGuest('plus');
-    expect(wrapper.state('totalGuest')).toBe(currentGuestCount + 1);
+    for (let i = 1; i < 4; i += 1) {
+      wrapper.instance().setTotalGuest('plus');
+      expect(wrapper.state('totalGuest')).toBe(currentGuestCount + i);
+    }
+    for (let i = 2; i > 0; i -= 1) {
+      wrapper.instance().setTotalGuest('minus');
+      expect(wrapper.state('totalGuest')).toBe(currentGuestCount + i);
+    }
   });
 
   it('should have a working method setTotalInfant', () => {
     const currentInfantCount = wrapper.state('totalInfant');
-    wrapper.instance().setTotalInfant('plus');
-    expect(wrapper.state('totalInfant')).toBe(currentInfantCount + 1);
+    for (let i = 1; i < 5; i += 1) {
+      wrapper.instance().setTotalInfant('plus');
+      expect(wrapper.state('totalInfant')).toBe(currentInfantCount + i);
+    }
+    for (let i = 3; i > 0; i -= 1) {
+      wrapper.instance().setTotalInfant('minus');
+      expect(wrapper.state('totalInfant')).toBe(currentInfantCount + i);
+    }
   });
 
   it('should have a working method get', (done) => {
@@ -59,5 +71,13 @@ describe('Booking Component', () => {
         expect(response[0].reservations).toHaveLength(8);
         done();
       });
+  });
+
+  it('should have a working method handleGuest', () => {
+    const currentGuestView = wrapper.state('guestView');
+    wrapper.instance().handleGuest();
+    expect(wrapper.state('guestView')).toBe(!currentGuestView);
+    wrapper.instance().handleGuest();
+    expect(wrapper.state('guestView')).toBe(currentGuestView);
   });
 });

@@ -14,16 +14,14 @@ Hopping Couch check out availability module
 1. [Requirements](#requirements)
 1. [Development](#development)
 
-## Usage
+## Screenshot
 
-> Some usage instructions
 
 ## Requirements
 
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
-- Node 6.13.0
-- etc
+- Node 10.9
+- MongoDB 3.4
 
 ## Development
 

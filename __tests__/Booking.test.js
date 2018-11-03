@@ -47,7 +47,7 @@ describe('Booking Component', () => {
       wrapper.instance().setTotalGuest('plus');
       expect(wrapper.state('totalGuest')).toBe(currentGuestCount + i);
     }
-    for (let i = 2; i > 0; i -= 1) {
+    for (let i = 2; i >= 0; i -= 1) {
       wrapper.instance().setTotalGuest('minus');
       expect(wrapper.state('totalGuest')).toBe(currentGuestCount + i);
     }
@@ -69,6 +69,10 @@ describe('Booking Component', () => {
     wrapper.instance().get(1)
       .then((response) => {
         expect(response[0].reservations).toHaveLength(8);
+        done();
+      })
+      .catch((error) => {
+        expect(error).not.toBeNull();
         done();
       });
   });

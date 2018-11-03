@@ -45,7 +45,7 @@ class GuestBtnGroup extends React.Component {
   handleMinus() {
     const { num } = this.state;
     const { type, setTotalGuest, setTotalInfant } = this.props;
-    if (num > 1 && type) {
+    if (num > 1) {
       this.setState({
         num: num - 1,
       });
@@ -110,9 +110,7 @@ GuestBtnGroup.propTypes = {
 GuestBtnGroup.defaultProps = {
   number: 0,
   type: 'adult-minus',
-  getTotalGuest: () => {
-
-  },
+  getTotalGuest: () => 1,
   setTotalGuest: () => {
 
   },

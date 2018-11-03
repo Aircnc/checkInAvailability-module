@@ -36,4 +36,28 @@ describe('Booking Component', () => {
         done();
       });
   });
+
+  it('should have a working method getTotalGuest', () => {
+    expect(wrapper.instance().getTotalGuest()).toBe(wrapper.state('totalGuest'));
+  });
+
+  it('should have a working method setTotalGuest', () => {
+    const currentGuestCount = wrapper.state('totalGuest');
+    wrapper.instance().setTotalGuest('plus');
+    expect(wrapper.state('totalGuest')).toBe(currentGuestCount + 1);
+  });
+
+  it('should have a working method setTotalInfant', () => {
+    const currentInfantCount = wrapper.state('totalInfant');
+    wrapper.instance().setTotalInfant('plus');
+    expect(wrapper.state('totalInfant')).toBe(currentInfantCount + 1);
+  });
+
+  it('should have a working method get', (done) => {
+    wrapper.instance().get(1)
+      .then((response) => {
+        expect(response[0].reservations).toHaveLength(8);
+        done();
+      });
+  });
 });

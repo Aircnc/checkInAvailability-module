@@ -4,10 +4,10 @@ import GuestBtnGroup from './GuestBtnGroup';
 
 const Dropdown = (props) => {
   const {
-    handleGuest, getTotalGuest, setTotalGuest, setTotalInfant,
+    handleGuest, getTotalGuest, setTotalGuest, setTotalInfant, dropdownDisplay,
   } = props;
   return (
-    <div id="drop-down-guest">
+    <div id="drop-down-guest" style={{ display: `${dropdownDisplay}` }}>
       <div id="drop-down-content">
         <div className="adult-guest">
           <div className="guest-row-content">
@@ -52,6 +52,7 @@ Dropdown.propTypes = {
   getTotalGuest: PropTypes.func,
   setTotalGuest: PropTypes.func,
   setTotalInfant: PropTypes.func,
+  dropdownDisplay: PropTypes.string,
 };
 
 Dropdown.defaultProps = {
@@ -68,6 +69,7 @@ Dropdown.defaultProps = {
   setTotalInfant: () => {
 
   },
+  dropdownDisplay: 'none',
 };
 
 export default Dropdown;

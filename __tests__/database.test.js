@@ -1,7 +1,7 @@
 const Reservations = require('../database/Reservation');
 const fake = require('../utils/fake_data');
 
-xtest('properly clears data in the collection', (done) => {
+test('properly clears data in the collection', (done) => {
   expect.assertions(1);
   Reservations.deleteMany({}, (err) => {
     if (err) throw err;
@@ -13,7 +13,7 @@ xtest('properly clears data in the collection', (done) => {
   });
 });
 
-xtest('properly seed data in the collection', (done) => {
+test('properly seed data in the collection', (done) => {
   expect.assertions(1);
   Reservations.create(fake(100), (err) => {
     if (err) throw err;

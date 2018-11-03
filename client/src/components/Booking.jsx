@@ -16,6 +16,10 @@ class Booking extends React.Component {
       guestText: '1 Guest',
       commaText: '',
       infantText: '',
+      guestStyle: '',
+      infantStyle: '',
+      dropdownDisplay: 'none',
+      arrow: 'm16.29 4.3a1 1 0 1 1 1.41 1.42l-8 8a1 1 0 0 1 -1.41 0l-8-8a1 1 0 1 1 1.41-1.42l7.29 7.29z',
     };
     this.get = this.get.bind(this);
     this.handleGuest = this.handleGuest.bind(this);
@@ -26,7 +30,14 @@ class Booking extends React.Component {
 
   componentDidMount() {
     const listingId = Math.ceil(Math.random() * 100);
-    this.get(listingId);
+    this.get(listingId)
+      .then((response) => {
+        this.setState({
+          avgReview: response.data[0].avgReview / 3 * 40,
+          reviewCount: response.data[0].reviewCount,
+          roomPrice: response.data[0].roomPrice,
+        });
+      });
   }
 
   getTotalGuest() {
@@ -48,15 +59,15 @@ class Booking extends React.Component {
     if (newGuest > 1) {
       this.setState({
         guestText: newGuest.toString().concat(' Guests'),
+        guestStyle: 'green',
+        infantStyle: '',
       });
-      document.getElementById('guest-count').classList.add('green');
-      document.getElementById('infant-count').classList.remove('green');
     } else if (newGuest === 1) {
       this.setState({
         guestText: '1 Guest',
+        guestStyle: 'green',
+        infantStyle: '',
       });
-      document.getElementById('guest-count').classList.add('green');
-      document.getElementById('infant-count').classList.remove('green');
     }
   }
 
@@ -75,36 +86,34 @@ class Booking extends React.Component {
       this.setState({
         commaText: ', ',
         infantText: newInfant.toString().concat(' Infants'),
+        guestStyle: '',
+        infantStyle: 'green',
       });
-      document.getElementById('guest-count').classList.remove('green');
-      document.getElementById('infant-count').classList.add('green');
     } else if (newInfant === 1) {
       this.setState({
         commaText: ', ',
         infantText: '1 Infant',
+        guestStyle: '',
+        infantStyle: 'green',
       });
-      document.getElementById('guest-count').classList.remove('green');
-      document.getElementById('infant-count').classList.add('green');
     } else {
       this.setState({
         commaText: '',
         infantText: '',
+        guestStyle: 'green',
+        infantStyle: '',
       });
-      document.getElementById('guest-count').classList.add('green');
-      document.getElementById('infant-count').classList.remove('green');
     }
   }
 
   get(listingId) {
     return axios.get(`/listings/${listingId}/reservations`)
-      .then((response) => {
-        this.setState({
-          avgReview: response.data[0].avgReview / 3 * 40,
-          reviewCount: response.data[0].reviewCount,
-          roomPrice: response.data[0].roomPrice,
-        });
-      })
       .catch((error) => {
+        this.setState({
+          avgReview: null,
+          reviewCount: null,
+          roomPrice: null,
+        });
         throw error;
       });
   }
@@ -116,21 +125,28 @@ class Booking extends React.Component {
     });
     if (!guestView) {
       // document.body.addEventListener('click', this.handleGuest);
-      document.getElementById('guest-count').classList.add('green');
-      document.getElementById('drop-down-guest').style.display = 'block';
-      document.getElementById('downarrow').firstChild.setAttribute('d', 'm1.71 13.71a1 1 0 1 1 -1.42-1.42l8-8a1 1 0 0 1 1.41 0l8 8a1 1 0 1 1 -1.41 1.42l-7.29-7.29z');
+      this.setState({
+        guestStyle: 'green',
+        dropdownDisplay: 'block',
+        arrow: 'm1.71 13.71a1 1 0 1 1 -1.42-1.42l8-8a1 1 0 0 1 1.41 0l8 8a1 1 0 1 1 -1.41 1.42l-7.29-7.29z',
+      });
     } else {
       // document.body.removeEventListener('click', this.handleGuest);
-      document.getElementById('guest-count').classList.remove('green');
-      document.getElementById('infant-count').classList.remove('green');
-      document.getElementById('drop-down-guest').style.display = 'none';
-      document.getElementById('downarrow').firstChild.setAttribute('d', 'm16.29 4.3a1 1 0 1 1 1.41 1.42l-8 8a1 1 0 0 1 -1.41 0l-8-8a1 1 0 1 1 1.41-1.42l7.29 7.29z');
+      this.setState({
+        guestStyle: '',
+        infantStyle: '',
+        dropdownDisplay: 'none',
+        arrow: 'm16.29 4.3a1 1 0 1 1 1.41 1.42l-8 8a1 1 0 0 1 -1.41 0l-8-8a1 1 0 1 1 1.41-1.42l7.29 7.29z',
+      });
     }
   }
 
   render() {
     const {
-      roomPrice, avgReview, reviewCount, guestText, infantText, commaText,
+      roomPrice, avgReview, reviewCount,
+      guestText, infantText, commaText,
+      guestStyle, infantStyle, dropdownDisplay,
+      arrow,
     } = this.state;
     return (
       <div className="booking-container">
@@ -178,12 +194,12 @@ class Booking extends React.Component {
                 Guests
                 <div id="booking-guests">
                   <button type="button" onClick={this.handleGuest}>
-                    <span id="guest-count">{guestText}</span>
+                    <span id="guest-count" className={guestStyle}>{guestText}</span>
                     <span>{commaText}</span>
-                    <span id="infant-count">{infantText}</span>
+                    <span id="infant-count" className={infantStyle}>{infantText}</span>
                   </button>
                   <svg id="downarrow" viewBox="0 0 18 18" style={{ height: '16px', width: '16px' }}>
-                    <path d="m16.29 4.3a1 1 0 1 1 1.41 1.42l-8 8a1 1 0 0 1 -1.41 0l-8-8a1 1 0 1 1 1.41-1.42l7.29 7.29z" />
+                    <path d={arrow} />
                   </svg>
                 </div>
                 <Dropdown
@@ -191,6 +207,7 @@ class Booking extends React.Component {
                   getTotalGuest={this.getTotalGuest}
                   setTotalGuest={this.setTotalGuest}
                   setTotalInfant={this.setTotalInfant}
+                  dropdownDisplay={dropdownDisplay}
                 />
               </div>
               <Button type="submit" id="booking-btn">Request to book</Button>

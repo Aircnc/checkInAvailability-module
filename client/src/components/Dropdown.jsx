@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import CSSModules from 'react-css-modules';
 import GuestBtnGroup from './GuestBtnGroup';
+import styles from '../styles/Dropdown.css';
 
 const Dropdown = (props) => {
   const {
@@ -9,40 +11,39 @@ const Dropdown = (props) => {
   return (
     <div id="drop-down-guest" style={{ display: `${dropdownDisplay}` }}>
       <div id="drop-down-content">
-        <div className="adult-guest">
-          <div className="guest-row-content">
-            <div className="guest-type">Adults</div>
+        <div styleName="adult-guest">
+          <div styleName="guest-row-content">
+            <div styleName="guest-type">Adults</div>
             <GuestBtnGroup number={1} type="adult-minus" getTotalGuest={getTotalGuest} setTotalGuest={setTotalGuest} />
           </div>
         </div>
-        <div className="child-guest">
-          <div className="guest-row-content">
+        <div styleName="child-guest">
+          <div styleName="guest-row-content">
             <div>
-              <div className="guest-type">Children</div>
-              <div className="guest-txt">Ages 2–12</div>
+              <div styleName="guest-type">Children</div>
+              <div styleName="guest-txt">Ages 2–12</div>
             </div>
             <GuestBtnGroup number={0} type="child-minus" getTotalGuest={getTotalGuest} setTotalGuest={setTotalGuest} />
           </div>
         </div>
-        <div className="child-guest">
-          <div className="guest-row-content">
+        <div styleName="child-guest">
+          <div styleName="guest-row-content">
             <div>
-              <div className="guest-type">Infants</div>
-              <div className="guest-txt">Under 2</div>
+              <div styleName="guest-type">Infants</div>
+              <div styleName="guest-txt">Under 2</div>
             </div>
             <GuestBtnGroup number={0} type="infant-minus" setTotalInfant={setTotalInfant} />
           </div>
         </div>
         <div>
-          <div className="guest-desc">3 guests maximum. Infants don’t count toward the number of guests.</div>
-          <div className="guest-dropdown-close">
-            <button type="button" className="guest-dropdown-close-btn" onClick={handleGuest}>
+          <div styleName="guest-desc">3 guests maximum. Infants don’t count toward the number of guests.</div>
+          <div styleName="guest-dropdown-close">
+            <button type="button" styleName="guest-dropdown-close-btn" onClick={handleGuest}>
               Close
             </button>
           </div>
         </div>
       </div>
-
     </div>
   );
 };
@@ -56,19 +57,11 @@ Dropdown.propTypes = {
 };
 
 Dropdown.defaultProps = {
-  handleGuest: () => {
-
-  },
-  getTotalGuest: () => {
-
-  },
-  setTotalGuest: () => {
-
-  },
-  setTotalInfant: () => {
-
-  },
+  handleGuest: () => {},
+  getTotalGuest: () => {},
+  setTotalGuest: () => {},
+  setTotalInfant: () => {},
   dropdownDisplay: 'none',
 };
 
-export default Dropdown;
+export default CSSModules(Dropdown, styles);

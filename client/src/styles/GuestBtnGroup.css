@@ -1,0 +1,37 @@
+button:disabled {
+  opacity: 0.5;
+}
+button:hover {
+  cursor: pointer;
+}
+.guest-count-btn {
+  position: relative;
+  grid-area: guestBtn;
+  display: grid;
+  grid-template-areas: 
+  'minus num plus';
+  grid-auto-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+.round-btn {
+  border-radius: 50%;
+  border: 0.5px solid #147B81;
+  height: 24px;
+  width: 24px;
+  position: relative;
+}
+.minus-sign, .plus-sign {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+}
+.btn-span-minus {
+  grid-area: minus;
+}
+.guest-count-num {
+  grid-area: num;
+}
+.btn-span-plus {
+  grid-area: plus;
+}

@@ -1,0 +1,13 @@
+.aval-container {
+  grid-area: aval;
+  border: solid rgb(95, 95, 95);
+  border-width: 1px;
+  padding: 10px;
+}
+.aval-card {
+  margin: auto;
+  width: 660px;
+  height: 460px;
+  border: solid #ccc;
+  border-width: 1px;
+}

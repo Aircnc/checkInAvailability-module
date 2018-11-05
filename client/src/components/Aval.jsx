@@ -1,9 +1,11 @@
 import React from 'react';
+import CSSModules from 'react-css-modules';
+import styles from '../styles/Aval.css';
 
 const Aval = () => (
-  <div className="aval-container">
-    <div className="aval-card" />
+  <div styleName="aval-container">
+    <div styleName="aval-card" />
   </div>
 );
 
-export default Aval;
+export default CSSModules(Aval, styles);

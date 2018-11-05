@@ -1,7 +1,9 @@
 import React from 'react';
 import axios from 'axios';
+import CSSModules from 'react-css-modules';
 import { Button } from 'semantic-ui-react';
 import Dropdown from './Dropdown';
+import styles from '../styles/Booking.css';
 
 class Booking extends React.Component {
   constructor(props) {
@@ -124,14 +126,12 @@ class Booking extends React.Component {
       guestView: !guestView,
     });
     if (!guestView) {
-      // document.body.addEventListener('click', this.handleGuest);
       this.setState({
         guestStyle: 'green',
         dropdownDisplay: 'block',
         arrow: 'm1.71 13.71a1 1 0 1 1 -1.42-1.42l8-8a1 1 0 0 1 1.41 0l8 8a1 1 0 1 1 -1.41 1.42l-7.29-7.29z',
       });
     } else {
-      // document.body.removeEventListener('click', this.handleGuest);
       this.setState({
         guestStyle: '',
         infantStyle: '',
@@ -149,54 +149,54 @@ class Booking extends React.Component {
       arrow,
     } = this.state;
     return (
-      <div className="booking-container">
-        <div className="booking-card">
-          <div className="price-tag">
+      <div styleName="booking-container">
+        <div styleName="booking-card">
+          <div styleName="price-tag">
             <div className="price">
-              <span id="room-price">
+              <span styleName="room-price">
                 <i className="fa fa-usd" />
                 {roomPrice}
               </span>
               <span>per night</span>
             </div>
-            <div className="avg-review">
-              <div className="star-ratings-css">
-                <span className="star-ratings-css-top" style={{ width: `${avgReview}%` }}>
+            <div styleName="avg-review">
+              <div styleName="star-ratings-css">
+                <span styleName="star-ratings-css-top" style={{ width: `${avgReview}%` }}>
                   <span>&#9733;</span>
                   <span>&#9733;</span>
                   <span>&#9733;</span>
                   <span>&#9733;</span>
                   <span>&#9733;</span>
                 </span>
-                <span className="star-ratings-css-bottom">
+                <span styleName="star-ratings-css-bottom">
                   <span>&#9733;</span>
                   <span>&#9733;</span>
                   <span>&#9733;</span>
                   <span>&#9733;</span>
                   <span>&#9733;</span>
                 </span>
-                <span id="review-count">{reviewCount}</span>
+                <span styleName="review-count">{reviewCount}</span>
               </div>
             </div>
           </div>
-          <hr className="line-breaker" />
+          <hr styleName="line-breaker" />
           <div className="check-in-info">
-            <form className="booking-form">
-              <div className="input-dates">
+            <form styleName="booking-form">
+              <div styleName="input-dates">
                 <label htmlFor="booking-dates">
                   Dates
-                  <div id="booking-dates">
+                  <div styleName="booking-dates">
                     <input id="checkin" placeholder="Dates" />
                   </div>
                 </label>
               </div>
-              <div className="input-guests">
+              <div styleName="input-guests">
                 Guests
-                <div id="booking-guests">
+                <div styleName="booking-guests">
                   <button type="button" onClick={this.handleGuest}>
-                    <span id="guest-count" className={guestStyle}>{guestText}</span>
+                    <span id="guest-count" styleName={guestStyle}>{guestText}</span>
                     <span>{commaText}</span>
-                    <span id="infant-count" className={infantStyle}>{infantText}</span>
+                    <span id="infant-count" styleName={infantStyle}>{infantText}</span>
                   </button>
                   <svg id="downarrow" viewBox="0 0 18 18" style={{ height: '16px', width: '16px' }}>
                     <path d={arrow} />
@@ -212,10 +212,10 @@ class Booking extends React.Component {
               </div>
               <Button type="submit" id="booking-btn">Request to book</Button>
             </form>
-            <p id="booking-short-desc">You won’t be charged yet</p>
+            <p styleName="booking-short-desc">You won’t be charged yet</p>
           </div>
-          <hr className="line-breaker" />
-          <div className="booking-footer">
+          <hr styleName="line-breaker" />
+          <div styleName="booking-footer">
             <b>This home is on people’s minds.</b>
             <br />
             <p>It’s been viewed 500+ times in the past week.</p>
@@ -226,4 +226,4 @@ class Booking extends React.Component {
   }
 }
 
-export default Booking;
+export default CSSModules(Booking, styles);

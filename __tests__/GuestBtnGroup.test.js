@@ -1,6 +1,5 @@
 /* eslint react/jsx-filename-extension: [0] */
 
-// import sinon from 'sinon';
 import GuestBtnGroup from '../client/src/components/GuestBtnGroup';
 
 const React = require('react');
@@ -73,14 +72,33 @@ describe('GuestBtnGroup Component', () => {
 
   it('should fire handleMinus when clicked on minus-sign button', () => {
     const wrapper = Enzyme.shallow(<GuestBtnGroup number={1} type="adult-minus" />);
-    // const spy = jest.spyOn(GuestBtnGroup.prototype, 'handleMinus');
+    const spy = jest.spyOn(wrapper.instance(), 'handleMinus');
+    wrapper.instance().handlePlus();
+    wrapper.find('.round-btn-minus').simulate('click');
+    expect(spy).toBeCalledTimes(1);
+  });
+
+  it('clicked on minus-sign button updates the state', () => {
+    const wrapper = Enzyme.shallow(<GuestBtnGroup number={1} type="adult-minus" />);
     expect(wrapper.state('num')).toBe(1);
     wrapper.instance().handlePlus();
     expect(wrapper.state('num')).toBe(2);
     wrapper.find('.round-btn-minus').simulate('click');
-    // console.log(GuestBtnGroup.prototype);
-    // expect(GuestBtnGroup.prototype.handleMinus).toBeCalledTimes(1);
     expect(wrapper.state('num')).toBe(1);
-    // spy.mockRestore();
+  });
+
+  it('should fire handlePlus when clicked on plus-sign button', () => {
+    const wrapper = Enzyme.shallow(<GuestBtnGroup number={1} />);
+    const spy = jest.spyOn(wrapper.instance(), 'handlePlus');
+    wrapper.instance().handleMinus();
+    wrapper.find('.round-btn-plus').simulate('click');
+    expect(spy).toBeCalledTimes(1);
+  });
+
+  it('clicked on plus-sign button updates the state', () => {
+    const wrapper = Enzyme.shallow(<GuestBtnGroup number={1} />);
+    expect(wrapper.state('num')).toBe(1);
+    wrapper.find('.round-btn-plus').simulate('click');
+    expect(wrapper.state('num')).toBe(2);
   });
 });

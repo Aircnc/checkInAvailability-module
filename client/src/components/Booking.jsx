@@ -214,7 +214,7 @@ class Booking extends React.Component {
             </form>
             <p styleName="booking-short-desc">You won’t be charged yet</p>
           </div>
-          <hr className="line-breaker" />
+          <hr styleName="line-breaker" />
           <div styleName="booking-footer">
             <b>This home is on people’s minds.</b>
             <br />

@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import CSSModules from 'react-css-modules';
+import styles from '../styles/GuestBtnGroup.css';
 
 class GuestBtnGroup extends React.Component {
   constructor(props) {
@@ -77,18 +79,18 @@ class GuestBtnGroup extends React.Component {
   render() {
     const { num, disabled } = this.state;
     return (
-      <div className="guest-count-btn">
-        <span className="btn-span-minus">
-          <button type="button" disabled={disabled} className="round-btn round-btn-minus" onClick={this.handleMinus}>
-            <svg className="minus-sign" viewBox="0 0 24 24" style={{ height: '16px', width: '16px' }}>
+      <div styleName="guest-count-btn">
+        <span styleName="btn-span-minus">
+          <button type="button" disabled={disabled} styleName="round-btn" className="round-btn-minus" onClick={this.handleMinus}>
+            <svg styleName="minus-sign" viewBox="0 0 24 24" style={{ height: '16px', width: '16px' }}>
               <rect height="2" rx="1" width="12" x="6" y="11" style={{ fill: '#147B81' }} />
             </svg>
           </button>
         </span>
-        <span className="guest-count-num">{num}</span>
-        <span className="btn-span-plus">
-          <button type="button" className="round-btn round-btn-plus" onClick={this.handlePlus}>
-            <svg className="plus-sign" viewBox="0 0 24 24" style={{ height: '16px', width: '16px' }}>
+        <span styleName="guest-count-num">{num}</span>
+        <span styleName="btn-span-plus">
+          <button type="button" styleName="round-btn" className="round-btn-plus" onClick={this.handlePlus}>
+            <svg styleName="plus-sign" viewBox="0 0 24 24" style={{ height: '16px', width: '16px' }}>
               <rect height="2" rx="1" width="12" x="6" y="11" style={{ fill: '#147B81' }} />
               <rect height="12" rx="1" width="2" x="11" y="6" style={{ fill: '#147B81' }} />
             </svg>
@@ -119,4 +121,4 @@ GuestBtnGroup.defaultProps = {
   },
 };
 
-export default GuestBtnGroup;
+export default CSSModules(GuestBtnGroup, styles);

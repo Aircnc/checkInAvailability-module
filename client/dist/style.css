@@ -2,9 +2,9 @@ body {
     margin: 0;
     overflow: scroll;
 }
-button:hover {
+/* button:hover {
     cursor: pointer;
-}
+} */
 .nav-container {
   display: grid;
   grid-template-areas:
@@ -199,25 +199,25 @@ button:hover {
     border-width: 1px;
     padding: 10px;
 }
-.booking-container {
+/* .booking-container {
     grid-area: book;
     border: solid rgb(95, 95, 95);
     border-width: 1px;
     padding: 10px;
-}
-.aval-container {
+} */
+/* .aval-container {
     grid-area: aval;
     border: solid rgb(95, 95, 95);
     border-width: 1px;
     padding: 10px;
-}
+} */
 .reviews-container {
     grid-area: reviews;
     border: solid rgb(95, 95, 95);
     border-width: 1px;
     padding: 10px;
 }
-.booking-card {
+/* .booking-card {
     font-family: 'Lato', sans-serif;
     margin: auto;
     position: sticky;
@@ -226,51 +226,51 @@ button:hover {
     height: 450px;
     border: solid #ccc;
     border-width: 1px;
-}
-.aval-card {
+} */
+/* .aval-card {
     margin: auto;
     width: 660px;
     height: 460px;
     border: solid #ccc;
     border-width: 1px;
-}
-.price-tag {
+} */
+/* .price-tag {
     padding: 5%;
     font-size: smaller;
-}
-#room-price {
+} */
+/* .room-price {
     font-size: 20px;
     font-weight: bold;
     margin-right: 5px;
-}
-.avg-review {
+} */
+/* .avg-review {
     padding-top: 2px;
-}
+} */
 .line-breaker {
     border-top: 0.5px solid #ddd;
     width: 90%;
     margin: auto;
 }
-.booking-form {
+/* .booking-form {
     padding: 5%;
     height: 252.5px;
-}
-#booking-btn {
+} */
+/* #booking-btn {
     width: 100%;
     background-color: rgb(252, 92, 102);
     color: white;
     height: 52px;
     font-size: 16.5px;
-}
-#booking-short-desc {
+} */
+/* .booking-short-desc {
     text-align: center;
     font-size: smaller;
     padding: 0 5% 5% 0;
 }
 .booking-footer {
     padding: 5%;
-}
-.star-ratings-css {
+} */
+/* .star-ratings-css {
     unicode-bidi: bidi-override;
     color: #ddd0d5;
     position: relative;
@@ -292,21 +292,21 @@ button:hover {
     padding: 0;
     display: inline-block;
     z-index: 0;
-}
-#review-count {
+} */
+/* .review-count {
     display: inline-block;
     margin-left: 5px;
     color: black;
-}
-.booking-form {
+} */
+/* .booking-form {
     font-size: smaller;
-}
-#booking-dates, #booking-guests {
+} */
+/* .booking-dates, .booking-guests {
     display: block;
     position: relative;
     margin-bottom: 10px;
-}
-#booking-guests > button {
+} */
+/* .booking-guests > button {
     width: 100%;
     border-color: #ddd;
     text-align: left;
@@ -315,14 +315,14 @@ button:hover {
     font-weight: lighter;
     width: 100%;
     height: 42px;
-}
-.input-dates {
+} */
+/* .input-dates {
     height: 75px;
 }
 .input-guests {
     height: 85px;
-}
-#checkin {
+} */
+/* #checkin {
     display: block;
     font-size: 16px;
     font-weight: lighter;
@@ -338,14 +338,14 @@ button:hover {
     z-index: 1;
     left: 90%;
     bottom: 30px;
-}
-.green {
+} */
+/* .green {
     background-color: #9DEDE4;
     color: #147B81;
     border-radius: 3px;
     padding: 2%;
     margin: 2%;
-}
+} */
 #drop-down-guest {
     display: none;
     border: 1px solid #ddd;

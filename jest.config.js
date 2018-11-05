@@ -1,6 +1,5 @@
 // For a detailed explanation regarding each configuration property, visit:
 // https://jestjs.io/docs/en/configuration.html
-
 module.exports = {
   // An array of regexp pattern strings used to skip coverage collection
   // coveragePathIgnorePatterns: [
@@ -23,6 +22,12 @@ module.exports = {
     '<rootDir>/__tests__/setup/',
   ],
 
+  // mock css to prevent jest error when using react css module
+  moduleNameMapper: {
+    '\\.(css|less)$': 'identity-obj-proxy',
+  },
+
+  // scriptPreprocessor: '<rootDir>/node_modules/jest-css-modules',
   // An array of regexp pattern strings that are matched against all source file paths,
   // matched files will skip transformation
   // transformIgnorePatterns: [

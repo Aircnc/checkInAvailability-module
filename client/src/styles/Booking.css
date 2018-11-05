@@ -1,0 +1,129 @@
+button:hover {
+  cursor: pointer;
+}
+.booking-container {
+  grid-area: book;
+  border: solid rgb(95, 95, 95);
+  border-width: 1px;
+  padding: 10px;
+}
+.booking-card {
+  font-family: 'Lato', sans-serif;
+  margin: auto;
+  position: sticky;
+  top: 30px;
+  width: 377px;
+  height: 450px;
+  border: solid #ccc;
+  border-width: 1px;
+}
+.price-tag {
+  padding: 5%;
+  font-size: smaller;
+}
+.room-price {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 5px;
+}
+.avg-review {
+  padding-top: 2px;
+}
+.star-ratings-css {
+  unicode-bidi: bidi-override;
+  color: #ddd0d5;
+  position: relative;
+  padding: 0;
+  width: 90px;
+}
+.star-ratings-css-top {
+  width: 100%;
+  color: rgb(25, 133, 140);
+  padding: 0;
+  position: absolute;
+  z-index: 1;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+.star-ratings-css-bottom {
+  padding: 0;
+  display: inline-block;
+  z-index: 0;
+}
+.review-count {
+  display: inline-block;
+  margin-left: 5px;
+  color: black;
+}
+.line-breaker {
+  border-top: 0.5px solid #ddd;
+  width: 90%;
+  margin: auto;
+}
+.booking-form {
+  padding: 5%;
+  height: 252.5px;
+  font-size: smaller;
+}
+.booking-dates, .booking-guests {
+  display: block;
+  position: relative;
+  margin-bottom: 10px;
+}
+.booking-guests > button {
+  width: 100%;
+  border-color: #ddd;
+  text-align: left;
+  display: block;
+  font-size: 16px;
+  font-weight: lighter;
+  width: 100%;
+  height: 42px;
+}
+.input-dates {
+  height: 75px;
+}
+.input-guests {
+  height: 85px;
+}
+:global #booking-btn {
+  width: 100%;
+  background-color: rgb(252, 92, 102);
+  color: white;
+  height: 52px;
+  font-size: 16.5px;
+}
+.booking-short-desc {
+  text-align: center;
+  font-size: smaller;
+  padding: 0 5% 5% 0;
+}
+.booking-footer {
+  padding: 5%;
+}
+.green {
+  background-color: #9DEDE4;
+  color: #147B81;
+  border-radius: 3px;
+  padding: 2%;
+  margin: 2%;
+}
+:global #checkin {
+  display: block;
+  font-size: 16px;
+  font-weight: lighter;
+  width: 100%;
+  height: 42px;
+  padding: 2%;
+}
+:global #guest-count {
+  width: auto;
+}
+:global #downarrow {
+  position: relative;
+  z-index: 1;
+  left: 90%;
+  bottom: 30px;
+}

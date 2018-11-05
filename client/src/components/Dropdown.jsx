@@ -56,18 +56,10 @@ Dropdown.propTypes = {
 };
 
 Dropdown.defaultProps = {
-  handleGuest: () => {
-
-  },
-  getTotalGuest: () => {
-
-  },
-  setTotalGuest: () => {
-
-  },
-  setTotalInfant: () => {
-
-  },
+  handleGuest: () => {},
+  getTotalGuest: () => {},
+  setTotalGuest: () => {},
+  setTotalInfant: () => {},
   dropdownDisplay: 'none',
 };
 

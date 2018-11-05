@@ -16,7 +16,7 @@ Hopping Couch check out availability module
 
 ## Screenshot
 
-![Screenshot of module](./__img__/checkout.png){ width=50% }
+![Screenshot of module](./__img__/checkout.png)
 
 ## Requirements
 

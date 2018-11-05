@@ -1,3 +1,5 @@
 /node_modules/
 /client/dist/aval.bundle.js
+# /client/src/components/Nav.jsx
+# /client/src/components/Images.jsx
 /coverage/

@@ -31,9 +31,10 @@ class Booking extends React.Component {
   }
 
   componentDidMount() {
-    const listingId = Math.ceil(Math.random() * 100);
+    const listingId = window.location.href.slice(31, -1);
     this.get(listingId)
       .then((response) => {
+        console.log(response);
         this.setState({
           avgReview: response.data[0].avgReview / 3 * 40,
           reviewCount: response.data[0].reviewCount,
@@ -109,7 +110,7 @@ class Booking extends React.Component {
   }
 
   get(listingId) {
-    return axios.get(`/listings/${listingId}/reservations`)
+    return axios.get(`http://localhost:3001/listings/${listingId}/reservations`)
       .catch((error) => {
         this.setState({
           avgReview: null,
@@ -186,7 +187,17 @@ class Booking extends React.Component {
                 <label htmlFor="booking-dates">
                   Dates
                   <div styleName="booking-dates">
-                    <input id="checkin" placeholder="Dates" />
+                    <div styleName="book-checkin">
+                      <input id="checkin" placeholder="Check in" />
+                    </div>
+                    <div id="rightarrow">
+                      <svg viewBox="0 0 24 24" style={{ height: '24px', width: '24px' }}>
+                        <path d="m0 12.5a.5.5 0 0 0 .5.5h21.79l-6.15 6.15a.5.5 0 1 0 .71.71l7-7v-.01a.5.5 0 0 0 .14-.35.5.5 0 0 0 -.14-.35v-.01l-7-7a .5.5 0 0 0 -.71.71l6.15 6.15h-21.79a.5.5 0 0 0 -.5.5z" fillRule="evenodd" />
+                      </svg>
+                    </div>
+                    <div styleName="book-checkout">
+                      <input id="checkout" placeholder="Check out" />
+                    </div>
                   </div>
                 </label>
               </div>

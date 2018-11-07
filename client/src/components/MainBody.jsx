@@ -6,10 +6,10 @@ import Aval from './Aval';
 
 const MainBody = () => (
   <div className="main-body-container">
-    {/* <Desc /> */}
+    <div className="desc-container" id="description" />
     <Booking />
     <Aval />
-    {/* <Reviews /> */}
+    <div className="reviews-container" id="reviews" />
   </div>
 );
 

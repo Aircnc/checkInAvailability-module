@@ -3,8 +3,8 @@ button:hover {
 }
 .booking-container {
   grid-area: book;
-  border: solid rgb(95, 95, 95);
-  border-width: 1px;
+  /* border: solid rgb(95, 95, 95); */
+  /* border-width: 1px; */
   padding: 10px;
 }
 .booking-card {

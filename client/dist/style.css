@@ -1,3 +1,7 @@
+* {
+    transition: all 0.5s ease-in-out;
+}
+
 body {
     margin: 0;
     overflow: scroll;
@@ -63,7 +67,7 @@ button:hover {
     transition: all 0.5s ease-in-out;
 }
 #search-bar:focus {
-    width: 650px;
+    width: 600px;
     transition: all 0.5s ease-in-out;
 }
 #search-bar:hover {
@@ -128,16 +132,16 @@ button:hover {
 }
 .circle {
     position: relative;
-    top: 30%;
     left: 20%;
     width: 35px;
     height: 35px;
     background-image: url("https://www.thefamouspeople.com/profiles/images/elon-musk-6.jpg");
     background-size: cover;
-    border-radius: 50%;
+    border-radius: 70%;
     opacity: 0.5;
     transition: all 0.5s ease-in-out;
 }
+
 .circle:hover {
     opacity: 1;
     transition: all 0.5s ease-in-out;

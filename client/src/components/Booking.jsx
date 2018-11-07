@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import CSSModules from 'react-css-modules';
+import ReactDOM from 'react-dom';
 import { Button } from 'semantic-ui-react';
 import Dropdown from './Dropdown';
 import styles from '../styles/Booking.css';
@@ -109,7 +110,7 @@ class Booking extends React.Component {
   }
 
   get(listingId) {
-    return axios.get(`/listings/${listingId}/reservations`)
+    return axios.get(`http://127.0.0.1:3001/listings/${listingId}/reservations`)
       .catch((error) => {
         this.setState({
           avgReview: null,
@@ -226,4 +227,7 @@ class Booking extends React.Component {
   }
 }
 
+
 export default CSSModules(Booking, styles);
+
+

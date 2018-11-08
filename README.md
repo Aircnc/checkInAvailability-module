@@ -75,10 +75,11 @@ npm start
 3. run the following command line to start a mongodb container
     ```sh
     docker pull mongo:4.0
-    docker run -d --name mongodb mongo:4.0
+    docker run -d --name database mongo:4.0
     ```
 4. run the following command line to build an checkinserver image
     ```sh
+    docker pull node:latest
     docker build -t checkinserver .
     ```
 5. run the following command line to start a checkin container

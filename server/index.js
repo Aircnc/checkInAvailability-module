@@ -1,17 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const Reservations = require('../database/Reservation');
 
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(express.static(`${__dirname}/../client/dist`));
-
+app.use('/listings/:id', express.static(`${__dirname}/../client/dist`));
 
 const port = 3001;
 
-app.get('/listings/:id/reservations', (req, res) => {
+app.get('/listings/:id/reservations', cors(), (req, res) => {
   const { id } = req.params;
   Reservations.find({ listingId: id })
     .then((data) => {

@@ -1,0 +1,80 @@
+.calendar {
+  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  /* border-color: rgb(231, 231, 231);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 2px; */
+  background-color: white;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.calendar-content {
+  padding: 2px;
+}
+.calender-nav-bar {
+  display: grid;
+  grid-template-areas:
+    'leftBtn monthYear rightBtn';
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.previous-month {
+  display: flex;
+  grid-area: leftBtn;
+  justify-content: flex-start;
+}
+.previous-month > button, .next-month > button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 10px;
+  border: 1px solid rgb(231, 231, 231);
+  border-radius: 10%;
+}
+.previous-month > button:hover, .next-month > button:hover {
+  border: 1px solid #bbb;
+}
+.calendar-month-year {
+  display: flex;
+  grid-area: monthYear;
+  justify-content: center;
+  align-items: center;
+}
+.next-month {
+  display: flex;
+  grid-area: rightBtn;
+  justify-content: flex-end;
+}
+.calendar-headers {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.calendar-header-day {
+  width: 39px;
+  display: inline-block;
+  text-align: center;
+  font-size: 11.9px;
+  color: rgb(117, 117, 117);
+  font-weight: 500;
+}
+.calendar-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.calendar-row {
+  display: flex;
+  flex-direction: row;
+}
+.calendar-date {
+  width: 39px;
+  height: 39px;
+  font-weight: 300;
+  text-align: center;
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

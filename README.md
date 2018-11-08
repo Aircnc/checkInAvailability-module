@@ -38,7 +38,7 @@ npm run build
 npm start
 ```
 
-## How to integrate module into your proxt
+## How to integrate module into your proxy
 1. make sure to include following css links in your proxy index.html
     ```sh
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.css">

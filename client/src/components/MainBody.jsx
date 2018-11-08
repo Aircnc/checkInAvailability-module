@@ -1,16 +1,16 @@
 import React from 'react';
-// import Desc from './Desc';
+import CSSModules from 'react-css-modules';
 import Booking from './Booking';
 import Aval from './Aval';
-// import Reviews from './Reviews';
+import styles from '../styles/MainBody.css';
 
 const MainBody = () => (
-  <div className="main-body-container">
-    <div className="desc-container" id="description" />
+  <div styleName="main-body-container">
+    <div styleName="desc-container" id="description" />
     <Booking />
     <Aval />
-    <div className="reviews-container" id="reviews" />
+    <div styleName="reviews-container" id="reviews" />
   </div>
 );
 
-export default MainBody;
+export default CSSModules(MainBody, styles);

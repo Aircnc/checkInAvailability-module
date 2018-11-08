@@ -9,7 +9,6 @@ class Calendar extends React.Component {
     this.state = {
       currentYear: 2018,
       currentMonth: 'November',
-      // currentRows: [],
     };
     this.renderRows = this.renderRows.bind(this);
   }
@@ -20,11 +19,10 @@ class Calendar extends React.Component {
     for (let i = 0; i < 5; i += 1) {
       const row = [];
       for (let j = 0; j < 7; j += 1) {
-        row.push(j + i * 7);
+        row.push(j + i * 7 + currentYear - 2000);
       }
       currentRows.push(row);
     }
-    console.log(currentRows);
     const rowDivs = currentRows.map((row) => {
       const rowDiv = row.map(item => (<td styleName="calendar-date">{item}</td>));
       return (<tr styleName="calendar-row">{rowDiv}</tr>);
@@ -39,13 +37,13 @@ class Calendar extends React.Component {
   }
 
   render() {
-    const { type } = this.props;
+    const { showLeftBtn, showRightBtn } = this.props;
     const { currentYear, currentMonth } = this.state;
     return (
       <div styleName="calendar">
         <div styleName="calendar-content">
           <div styleName="calender-nav-bar">
-            <div styleName="previous-month">
+            <div styleName="previous-month" style={{ display: `${showLeftBtn}` }}>
               <button type="button" style={{ height: '32px', width: '40px' }}>
                 <svg
                   viewBox="0 0 1000 1000"
@@ -60,7 +58,7 @@ class Calendar extends React.Component {
               &nbsp;
               {currentYear}
             </strong>
-            <div styleName="next-month">
+            <div styleName="next-month" style={{ display: `${showRightBtn}` }}>
               <button type="button" style={{ height: '32px', width: '40px' }}>
                 <svg
                   viewBox="0 0 1000 1000"
@@ -90,11 +88,13 @@ class Calendar extends React.Component {
 }
 
 Calendar.propTypes = {
-  type: PropTypes.string,
+  showRightBtn: PropTypes.string,
+  showLeftBtn: PropTypes.string,
 };
 
 Calendar.defaultProps = {
-  type: 'checkin',
+  showRightBtn: 'flex',
+  showLeftBtn: 'flex',
 };
 
 export default CSSModules(Calendar, styles);

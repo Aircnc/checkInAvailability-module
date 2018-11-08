@@ -11,8 +11,9 @@ const Aval = () => (
         <p style={{ 'font-size': 'larger', 'margin-top': '5px' }}>Updated today</p>
       </div>
       <div styleName="two-calendar-container">
-        <Calendar />
-        <Calendar />
+        <Calendar showRightBtn="none" />
+        <div>&nbsp; &nbsp; &nbsp;</div>
+        <Calendar showLeftBtn="none" />
       </div>
     </div>
   </div>

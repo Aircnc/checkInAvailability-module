@@ -1,0 +1,34 @@
+.main-body-container {
+  width: 80%;
+  padding-top: 25px;
+  display: grid;
+  grid-template-areas:    
+    '. desc desc desc book book .'
+    '. aval aval aval book book .'
+    '. reviews reviews reviews book book .';
+  height: auto;
+  grid-gap: 10px;
+  margin: 0 auto;
+}
+.desc-container {
+  grid-area: desc;
+}
+.reviews-container {
+  grid-area: reviews;
+}
+:global body {
+  margin: 0;
+  overflow: scroll;
+}
+:global button:hover {
+  cursor: pointer;
+}
+:global #nav-alice {
+  height: 80px;
+  background-color: white;
+}
+:global .line-breaker {
+  border-top: 0.5px solid #ddd;
+  width: 90%;
+  margin: auto;
+}

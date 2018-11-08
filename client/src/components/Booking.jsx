@@ -16,6 +16,8 @@ class Booking extends React.Component {
       guestView: false,
       checkInView: false,
       checkOutView: false,
+      checkinStyle: '',
+      checkoutStyle: '',
       totalGuest: 1,
       totalInfant: 0,
       guestText: '1 Guest',
@@ -41,7 +43,6 @@ class Booking extends React.Component {
     const listingId = window.location.href.slice(31, -1);
     this.get(listingId)
       .then((response) => {
-        console.log(response);
         this.setState({
           avgReview: response.data[0].avgReview / 3 * 40,
           reviewCount: response.data[0].reviewCount,
@@ -136,12 +137,15 @@ class Booking extends React.Component {
     if (!checkInView) {
       this.setState({
         checkInDisplay: 'block',
+        checkinStyle: 'green',
         checkOutDisplay: 'none',
         checkOutView: false,
+        checkoutStyle: '',
       });
     } else {
       this.setState({
         checkInDisplay: 'none',
+        checkinStyle: '',
       });
     }
   }
@@ -154,12 +158,15 @@ class Booking extends React.Component {
     if (!checkOutView) {
       this.setState({
         checkOutDisplay: 'block',
+        checkoutStyle: 'green',
         checkInDisplay: 'none',
         checkInView: false,
+        checkinStyle: '',
       });
     } else {
       this.setState({
         checkOutDisplay: 'none',
+        checkoutStyle: '',
       });
     }
   }
@@ -191,6 +198,7 @@ class Booking extends React.Component {
       guestText, infantText, commaText,
       guestStyle, infantStyle, dropdownDisplay,
       arrow, checkInDisplay, checkOutDisplay,
+      checkinStyle, checkoutStyle,
     } = this.state;
     return (
       <div styleName="booking-container">
@@ -231,7 +239,7 @@ class Booking extends React.Component {
                   Dates
                   <div styleName="booking-dates">
                     <div styleName="book-checkin">
-                      <input id="checkin" placeholder="Check in" onClick={this.handleCheckIn} />
+                      <input id="checkin" placeholder="Check in" styleName={checkinStyle} onClick={this.handleCheckIn} />
                     </div>
                     <div id="rightarrow">
                       <svg viewBox="0 0 24 24" style={{ height: '24px', width: '24px' }}>
@@ -239,7 +247,7 @@ class Booking extends React.Component {
                       </svg>
                     </div>
                     <div styleName="book-checkout">
-                      <input id="checkout" placeholder="Check out" onClick={this.handleCheckOut} />
+                      <input id="checkout" placeholder="Check out" styleName={checkoutStyle} onClick={this.handleCheckOut} />
                     </div>
                   </div>
                 </label>

@@ -10,9 +10,10 @@ Hopping Couch check out availability module
 
 ## Table of Contents
 
-1. [Usage](#Usage)
-2. [Requirements](#requirements)
-3. [Development](#development)
+1. [Screenshot](#Screenshot)
+2. [Requirements](#Requirements)
+3. [Development](#Development)
+4. [Integration with proxy](#Integration)
 
 ## Screenshot
 
@@ -27,7 +28,18 @@ Hopping Couch check out availability module
 
 ## Development
 
-### Installing Dependencies
+### Make changes to exiting module
+
+From within the root directory:
+
+```sh
+npm install
+npm run seed
+npm run watch
+npm start:dev
+```
+
+### Run module as it is
 
 From within the root directory:
 
@@ -38,7 +50,7 @@ npm run build
 npm start
 ```
 
-## How to integrate module into your proxy
+## How to integrate module with your proxy
 1. make sure to include following css links in your proxy index.html
     ```sh
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.css">

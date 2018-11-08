@@ -14,6 +14,7 @@ Hopping Couch check out availability module
 2. [Requirements](#Requirements)
 3. [Development](#Development)
 4. [Integration with proxy](#Integration)
+5. [Dockerization](#Dockerization)
 
 ## Screenshot
 
@@ -66,4 +67,27 @@ npm start
 3. make sure to include following script tag
     ```sh
     <script src=`http://localhost:3001/listings/${id}/aval.bundle.js`></script>
+    ```
+
+## Dockerization
+1. download and install [Docker](https://docs.docker.com/docker-for-mac/install/) on your local machine
+2. cd into the root folder of this module
+3. run the following command line to start a mongodb container
+    ```sh
+    docker pull mongo:4.0
+    docker run -d --name mongodb mongo:4.0
+    ```
+4. run the following command line to build an checkinserver image
+    ```sh
+    docker build -t checkinserver .
+    ```
+5. run the following command line to start a checkin container
+    ```sh
+    docker run -d -p 8080:8080 --rm checkinserver
+    ```
+6. go to http://localhost:8080/listings/:id in your browser
+7. debug with following command line
+    ```sh
+    docker ps -a
+    docker logs <container_name>
     ```

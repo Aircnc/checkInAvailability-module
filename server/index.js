@@ -9,7 +9,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use('/listings/:id', express.static(`${__dirname}/../client/dist`));
 
-const port = 3001;
+const PORT = 8080;
+const HOST = '0.0.0.0';
 
 app.get('/listings/:id/reservations', cors(), (req, res) => {
   const { id } = req.params;
@@ -22,6 +23,5 @@ app.get('/listings/:id/reservations', cors(), (req, res) => {
     });
 });
 
-app.listen(port, () => {
-  console.log('server is up listening on 3001!');
-});
+app.listen(PORT, HOST);
+console.log(`Running on http://${HOST}:${PORT}`);

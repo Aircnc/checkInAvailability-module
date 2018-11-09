@@ -25,7 +25,7 @@ Hopping Couch check out availability module
 
 
 - Node 10.9
-- MongoDB 3.4
+- MongoDB 4.0
 
 ## Development
 

@@ -10,6 +10,7 @@ WORKDIR /src/app
 COPY . /src/app
 
 RUN npm install
+RUN npm run seed
 
 EXPOSE 8080
 

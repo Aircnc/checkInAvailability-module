@@ -7,8 +7,8 @@ const Aval = () => (
   <div styleName="aval-container">
     <div styleName="aval-card">
       <div styleName="aval-header">
-        <strong style={{ 'font-size': 'larger', 'margin-bottom': '5px' }}>Availability</strong>
-        <p style={{ 'font-size': 'larger', 'margin-top': '5px' }}>Updated today</p>
+        <strong style={{ fontSize: 'larger', marginBottom: '5px' }}>Availability</strong>
+        <p style={{ fontSize: 'larger', marginTop: '5px' }}>Updated today</p>
       </div>
       <div styleName="two-calendar-container">
         <Calendar showRightBtn="none" />

@@ -23,9 +23,9 @@ class Calendar extends React.Component {
       }
       currentRows.push(row);
     }
-    const rowDivs = currentRows.map((row) => {
-      const rowDiv = row.map(item => (<td styleName="calendar-date">{item}</td>));
-      return (<tr styleName="calendar-row">{rowDiv}</tr>);
+    const rowDivs = currentRows.map((row, indexRow) => {
+      const rowDiv = row.map((item, index) => (<td key={index.toString() + item} styleName="calendar-date">{item}</td>));
+      return (<tr key={indexRow.toString() + row} styleName="calendar-row">{rowDiv}</tr>);
     });
     return (
       <table className="calendar-table">

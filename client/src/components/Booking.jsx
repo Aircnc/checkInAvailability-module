@@ -40,7 +40,8 @@ class Booking extends React.Component {
   }
 
   componentDidMount() {
-    const listingId = window.location.href.slice(31, -1);
+    const url = window.location.href;
+    const listingId = Number(url.split('/')[url.split('/').length - 2]);
     this.get(listingId)
       .then((response) => {
         this.setState({

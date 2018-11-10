@@ -40,8 +40,7 @@ class Booking extends React.Component {
   }
 
   componentDidMount() {
-    const url = window.location.href;
-    const listingId = Number(url.split('/')[url.split('/').length - 2]);
+    const listingId = window.location.pathname;
     this.get(listingId)
       .then((response) => {
         this.setState({
@@ -119,7 +118,7 @@ class Booking extends React.Component {
   }
 
   get(listingId) {
-    return axios.get(`/listings/${listingId}/reservations`)
+    return axios.get(`${listingId}reservations`)
       .catch((error) => {
         this.setState({
           avgReview: null,

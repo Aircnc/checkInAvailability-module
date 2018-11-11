@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --coverage --detectOpenHandles",
     "test:init": "jest --init",
-    "build": "webpack -d",
+    "build": "webpack -d --mode=production",
     "watch": "webpack -d --watch",
     "start": "node server/index.js",
     "start:dev": "nodemon server/index.js --watch",
@@ -30,6 +30,7 @@
     "axios-mock-adapter": "^1.15.0",
     "babel-cli": "^6.26.0",
     "babel-loader": "^8.0.4",
+    "compression-webpack-plugin": "^2.0.0",
     "css-loader": "^1.0.1",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
